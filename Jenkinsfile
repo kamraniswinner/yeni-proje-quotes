@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    dir('backend') {
+                    dir('') {
                         sh 'npm install'
                     }
                 }
@@ -25,7 +25,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dir('backend') {
+                    dir('') {
                         sh "docker build -t ${DOCKER_IMAGE}:latest ."
                     }
                 }
